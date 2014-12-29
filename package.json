@@ -1,0 +1,23 @@
+{
+  "name": "bookmarklets",
+  "version": "0.1.0",
+  "description": "bookmarklets for front-end dev",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./build.js",
+    "watch": "fswatch-run src ./build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sixsided/bookmarklets"
+  },
+  "author": "sixsided",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/sixsided/bookmarklets/issues"
+  },
+  "devDependencies": {
+    "bookmarkletify": "0.0.1",
+    "uglify-js": "~2.4.16"
+  }
+}
