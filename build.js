@@ -1,14 +1,14 @@
 #!/usr/local/bin/node
 var fs = require('fs');
-var bookmarkletify = require( 'bookmarkletify' );
-var minify = require('uglify-js').minify;
+var uglifyjs = require('uglify-js');
+
 
 fs.readdirSync( './src' ).forEach( function( srcFileName, i, a ) {
 	var inJs = fs.readFileSync( './src/' + srcFileName, {encoding: 'utf8'} );
-	var minJs = minify( inJs, { fromString: true } ).code;
-	var outJs = bookmarkletify( minJs );
+	var minJs = uglifyjs.minify( inJs ).code;
+	var outJs = `javascript:${encodeURI( minJs )}`;
 	fs.writeFileSync( './dist/' + srcFileName, outJs );
 	
 	console.log(' + ',  'src/' + srcFileName, inJs.length + 'b', 
-				' -> ', 'dst/' + srcFileName, outJs.length + 'b');
+				' -> ', 'dist/' + srcFileName, outJs.length + 'b');
 } );
