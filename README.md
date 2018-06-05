@@ -13,10 +13,5 @@ Have you ever wanted to find all elements on the page that had a certain font, t
 want to find absolutely positioned elements?
 	enter "absolute"
 
-want to find webkit-prefixed css rules?
-	enter "-webkit"
-
-
-delineate 
------------
-same as rummage, but outlines affected elements.
+want to find a font weight?
+	enter "font-weight.*600"
